@@ -1,0 +1,83 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "D365 Operations Copilot API",
+    "description": "Multi-agent AI backend for D365 F&O operations queries",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://func-d365-ops-copilot.azurewebsites.net/api"
+    }
+  ],
+  "paths": {
+    "/Chat": {
+      "post": {
+        "operationId": "sendChatMessage",
+        "summary": "Send a message to the D365 Operations AI assistant",
+        "description": "Processes user messages through a multi-agent system that handles inventory queries, purchase order tracking, warehouse operations, and company policy questions.",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Function authentication key"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["Message"],
+                "properties": {
+                  "Message": {
+                    "type": "string",
+                    "description": "The user's question or request"
+                  },
+                  "SessionId": {
+                    "type": "string",
+                    "description": "Optional session ID for conversation tracking"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Reply": {
+                      "type": "string",
+                      "description": "The AI assistant's response"
+                    },
+                    "SessionId": {
+                      "type": "string",
+                      "description": "Session ID for conversation tracking"
+                    },
+                    "ToolsUsed": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "List of agents that were used to generate the response"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

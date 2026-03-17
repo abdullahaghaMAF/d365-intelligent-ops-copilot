@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "D365OpsCopilot.Functions": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7097",
+      "launchBrowser": false
+    }
+  }
+}
