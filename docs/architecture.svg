@@ -1,0 +1,91 @@
+<svg width="100%" viewBox="0 0 680 640" xmlns="http://www.w3.org/2000/svg" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f9fa;">
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<!-- User -->
+<rect x="270" y="20" width="140" height="44" rx="8" fill="#e8eaed" stroke="#5f5e5a" stroke-width="0.5"/>
+<text x="340" y="42" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#2c2c2a">User</text>
+
+<!-- Arrow: User to Copilot Studio -->
+<line x1="340" y1="64" x2="340" y2="94" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<!-- Copilot Studio -->
+<rect x="230" y="96" width="220" height="56" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text x="340" y="114" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">Copilot Studio</text>
+<text x="340" y="134" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">Teams / Web channel</text>
+
+<!-- Arrow: Copilot Studio to Azure Function -->
+<line x1="340" y1="152" x2="340" y2="178" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="354" y="169" text-anchor="start" font-size="12" fill="#5f5e5a">REST API</text>
+
+<!-- Azure Function -->
+<rect x="220" y="180" width="240" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="340" y="198" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#085041">Azure Functions</text>
+<text x="340" y="218" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0F6E56">.NET 8 isolated worker</text>
+
+<!-- Arrow: Azure Function to Orchestrator -->
+<line x1="340" y1="236" x2="340" y2="264" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<!-- Orchestrator Agent container -->
+<rect x="60" y="266" width="560" height="236" rx="16" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+<text x="340" y="290" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#3C3489">Orchestrator agent (Semantic Kernel)</text>
+<text x="340" y="308" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#534AB7">Intent classification + routing</text>
+
+<!-- Arrows: Orchestrator to Agents -->
+<line x1="165" y1="316" x2="165" y2="332" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="340" y1="316" x2="340" y2="332" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="515" y1="316" x2="515" y2="332" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<!-- DataAgent -->
+<rect x="90" y="334" width="150" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="165" y="352" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#085041">DataAgent</text>
+<text x="165" y="372" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0F6E56">D365 F&amp;O data</text>
+
+<!-- KnowledgeAgent -->
+<rect x="265" y="334" width="150" height="56" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text x="340" y="352" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">KnowledgeAgent</text>
+<text x="340" y="372" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">RAG search</text>
+
+<!-- General Knowledge -->
+<rect x="440" y="334" width="150" height="56" rx="8" fill="#e8eaed" stroke="#5f5e5a" stroke-width="0.5"/>
+<text x="515" y="352" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#2c2c2a">General</text>
+<text x="515" y="372" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#5f5e5a">Azure OpenAI</text>
+
+<!-- Arrows: Agents to Plugins -->
+<line x1="165" y1="390" x2="165" y2="420" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="340" y1="390" x2="340" y2="420" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<!-- D365DataPlugin -->
+<rect x="82" y="422" width="166" height="56" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+<text x="165" y="440" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#712B13">D365DataPlugin</text>
+<text x="165" y="460" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#993C1D">Inventory, POs, WH</text>
+
+<!-- KnowledgePlugin -->
+<rect x="257" y="422" width="166" height="56" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+<text x="340" y="440" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#712B13">KnowledgePlugin</text>
+<text x="340" y="460" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#993C1D">Search documents</text>
+
+<!-- Arrows: to External services -->
+<line x1="165" y1="478" x2="165" y2="554" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="340" y1="478" x2="340" y2="554" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="515" y1="390" x2="515" y2="554" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<!-- D365 Dataverse -->
+<rect x="85" y="556" width="160" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="165" y="574" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#085041">D365 Dataverse</text>
+<text x="165" y="594" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#0F6E56">ERP data APIs</text>
+
+<!-- Azure AI Search -->
+<rect x="260" y="556" width="160" height="56" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text x="340" y="574" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#0C447C">Azure AI Search</text>
+<text x="340" y="594" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#185FA5">Vector + hybrid</text>
+
+<!-- Azure OpenAI -->
+<rect x="435" y="556" width="160" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text x="515" y="574" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="500" fill="#633806">Azure OpenAI</text>
+<text x="515" y="594" text-anchor="middle" dominant-baseline="central" font-size="12" fill="#854F0B">GPT-4o + embeddings</text>
+
+</svg>

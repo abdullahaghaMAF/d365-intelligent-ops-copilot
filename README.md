@@ -8,6 +8,8 @@ This project demonstrates a multi-agent architecture where specialized AI agents
 
 ## Architecture
 ```
+![Architecture](docs/architecture.svg)
+
 User → Copilot Studio → Azure Function → Orchestrator Agent
                                               ├── DataAgent (D365 F&O inventory, POs, warehouses)
                                               ├── KnowledgeAgent (RAG over SOPs & policies via Azure AI Search)
